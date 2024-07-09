@@ -44,7 +44,7 @@ public class PrepApplicationTests {
     @Test
     public void updateUser_nullModel_shouldThrowException() {
         assertThrows(NullPointerException.class, () -> prepService.updateUser(nullModel));
-    }
+    }i
 
     @Test
     public void updateUser_emptyModel_shouldThrowException() {
