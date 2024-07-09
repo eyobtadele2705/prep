@@ -1,0 +1,26 @@
+services:
+  postgres:
+    container_name: prep_postgres_container
+    image: postgres
+    volumes:
+      - C:\prep_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=prep_db
+      - POSTGRES_USER=prep
+      - POSTGRES_PASSWORD=prep
+    networks:
+      - spring-demo
+  backend:
+    container_name: backend_api
+    image: prep:1.1
+    ports:
+      - 8099:8099
+    depends_on:
+      - postgres
+    networks:
+      - spring-demo
+networks:
+  spring-demo:
+    driver: bridge

@@ -1,0 +1,21 @@
+server:
+  port: 8099
+spring:
+  datasource:
+    username: prep
+    password: prep
+    url: jdbc:postgresql://localhost:5432/prep_db
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
