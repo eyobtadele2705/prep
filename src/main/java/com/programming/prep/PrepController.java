@@ -12,10 +12,17 @@ public class PrepController {
 
     private final PrepService prepService;
 
-    @GetMapping
-    public List<Model> getUser(){
-        return prepService.getUser();
-    }
+    /**
+ * Retrieves a list of {@link Model} objects from the database.
+ *
+ * @return A list of {@link Model} objects.
+ *
+ * @throws Exception If an error occurs while retrieving the data.
+ */
+@GetMapping
+public List<Model> getUser(){
+    return prepService.getUser();
+}
 
     @PostMapping
     public int createUser(@RequestBody Model model ){

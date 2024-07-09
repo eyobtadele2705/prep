@@ -25,23 +25,24 @@ public class PrepService {
 
     }
 
-    public String updateUser(Model model) {
-        var user = prepRepo.findById(model.getId()).orElse(null);
-        if (user != null){
-            Model model1 = Model.builder()
-                    .id(user.getId())
-                    .firstName(model.getFirstName())
-                    .lastName(model.getLastName())
-                    .email(model.getEmail())
-                    .job(model.getJob())
-                    .build();
-            prepRepo.save(model1);
-            return "User updated";
-        }
-        else {
-            return "User not found";
-        }
+
+public String updateUser(Model model) {
+    var user = prepRepo.findById(model.getId()).orElse(null);
+    if (user != null){
+        Model model1 = Model.builder()
+                .id(user.getId())
+                .firstName(model.getFirstName())
+                .lastName(model.getLastName())
+                .email(model.getEmail())
+                .job(model.getJob())
+                .build();
+        prepRepo.save(model1);
+        return "User updated";
     }
+    else {
+        return "User not found";
+    }
+}
 
     public String deleteUser(int id) {
         try {
