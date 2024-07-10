@@ -4,7 +4,7 @@ spring:
   datasource:
     username: prep
     password: prep
-    url: jdbc:postgresql://localhost:5432/prep_db
+    url: jdbc:postgresql://localhost:2345/prep_db
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

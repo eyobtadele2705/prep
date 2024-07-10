@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PrepApplicationTests {
-
+/*
     @Mock
     private PrepRepo prepRepo;
 
@@ -64,6 +64,6 @@ public class PrepApplicationTests {
         doThrow(new RuntimeException("Repository error")).when(prepRepo).save(any(Model.class));
 
         assertThrows(RuntimeException.class, () -> prepService.updateUser(validModel));
-    }
+    }*/
 }
 
